@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+   myredis:
+     image: redis
+     restart: always
+     ports:
+       - "6379:6379"
+   client:
+     depends_on:
+       - myredis
+     image: redis-client
